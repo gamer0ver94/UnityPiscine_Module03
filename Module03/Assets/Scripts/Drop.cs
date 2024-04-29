@@ -9,7 +9,7 @@ public class Drop : MonoBehaviour, IDropHandler
     public GameObject turrent;
     public void OnDrop(PointerEventData eventData)
     {
-            Debug.Log(slotName + " " + eventData.pointerDrag.transform.name);
+        Debug.Log(slotName + " " + eventData.pointerDrag.transform.name);
         if (eventData.pointerDrag.transform.name == slotName)
         {
             DragNDrop drop = eventData.pointerDrag.GetComponent<DragNDrop>();
