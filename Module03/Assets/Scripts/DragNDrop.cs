@@ -7,7 +7,6 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     public Vector3 initialPos = Vector3.zero;
     public Image image;
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         image = GetComponent<Image>();
@@ -20,6 +19,8 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Vector3 screenPos = Input.mousePosition;
         screenPos.z = -Camera.main.transform.position.z;
         transform.position = Camera.main.ScreenToWorldPoint(screenPos);
+
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
