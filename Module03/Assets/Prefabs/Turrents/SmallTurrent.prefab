@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 201
   m_Sprite: {fileID: -449433560, guid: 6e342d4cb5ab3ed54a97fa81c1170232, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,8 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9730784f53edfbb88bc953ec44cbbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 3
-  range: 0
+  attackDamage: 0.1
   attackDelay: 0.8
   projectiles: {fileID: 7921933829249512928, guid: fde952437c0652f428afc8fbab0250c9, type: 3}
   projectileSpeed: 400
+  instant: 0
+  position: {x: 0, y: 0, z: 0}

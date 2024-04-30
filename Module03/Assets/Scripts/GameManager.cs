@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
     {
         get{return gameManager;}
     }
+    public float getBaseHp{
+        get{return base.GetComponent<Base>().Hp;}
+    }
+    public float getBaseEnergy{
+        get{return base.GetComponent<Base>().Energy;}
+    }
     // Start is called before the first frame update
     void Awake()
     {

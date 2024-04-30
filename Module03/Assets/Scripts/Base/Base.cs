@@ -6,8 +6,14 @@ public class Base : MonoBehaviour
 {
     [SerializeField]
     private float hp = 5;
+    private int energy = 10;
 
     public float Hp
+    {
+        get{return hp;}
+        set{hp = value;}
+    }
+        public float Energy
     {
         get{return hp;}
         set{hp = value;}

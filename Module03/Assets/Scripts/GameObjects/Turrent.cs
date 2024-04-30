@@ -7,13 +7,15 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Turrent : MonoBehaviour
 {
+    public int energyCost;
     public float attackDamage;
-    public float range;
     public float attackDelay;
     private float timer = 0;
     private List<GameObject> targets;
     public GameObject projectiles;
     public float projectileSpeed;
+    public bool instant = false;
+    public Vector3 position;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +38,6 @@ public class Turrent : MonoBehaviour
         {
             int closestTarget = GetClosestTargetIndex();
             GameObject projectile = Instantiate(projectiles, transform.position, Quaternion.identity);
-            projectile.AddComponent<Rigidbody2D>();
-            projectile.GetComponent<Rigidbody2D>().gravityScale = 0;
-            projectile.AddComponent<CircleCollider2D>();
-            projectile.AddComponent<Projectile>();
             projectile.GetComponent<Projectile>().attackDamage = attackDamage;
             Vector3 direction = targets[closestTarget].transform.position - transform.position;
             direction.Normalize();
@@ -54,6 +52,12 @@ public class Turrent : MonoBehaviour
         {
             targets.Add(collision.gameObject);
         }
+        // if (collision.gameObject.tag == "Turrent Slot" && !collision.gameObject.GetComponent<TurrentSlot>().isAble)
+        // {
+        //     instant = true;
+        //     collision.gameObject.GetComponent<TurrentSlot>().isAble = true;
+        //     position = collision.transform.position;
+        // }
     }
 
     int GetClosestTargetIndex()
@@ -80,6 +84,9 @@ public class Turrent : MonoBehaviour
                 targets.RemoveAt(0);
             }
         }
+        // if (collision.gameObject.tag == "Turrent Slot"){
+        //     instant = false;
+        // }
 
     }
 }
